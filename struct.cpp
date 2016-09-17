@@ -13,7 +13,6 @@ struct Order{
 	int month;
 	int year;
 	int number;
-	
 };
 
 struct Item{
@@ -36,11 +35,14 @@ void newLine(){
 
 int main(){
 	Item it[3];
-	Customer cust[3];
+	Customer cust[1];
+	double numero;
 	
+	cout.setf(ios::fixed);
+	cout.setf(ios::showpoint);
+	cout.precision(2);
 	
-	
-	for(int m=0; m<3; m++){
+	for(int m=0; m<1; m++){
 		
 		cout<<"Enter Customer's Information " << m+1 << endl;
 		cout<<"Enter First Name: ";
@@ -72,8 +74,32 @@ int main(){
 				cout<<"Quantity: ";
 				cin>>it[n].quantity;
 				newLine();
+				cout<<endl;
 		}	
+	}
+	
+	cout << setw(10) << "#"
+	  	 << setw(15) << "Customer Name"
+		 << setw(15) << "Order Date"
+		 << setw(15) << "Item"
+		 << setw(15) << "Price"
+		 << setw(25) << "Quantity" 
+		 << endl;
+		 
+	for (int m=0; m<1; m++){
+		cout << setw(10) << m+1
+			 << setw(10) << cust[m].name.lastName << cust[m].name.firstName 
+			 << setw(10) << cust[m].ord.day << "/" <<cust[m].ord.month << "/" << cust[m].ord.year
+			 << endl;
+		for(int n=0; n<3; n++){
+			cout << setw (55) << it[n].name.itemName
+			 	 << setw(17) << it[n].price
+			 	 << setw(20) << it[n].quantity
+			  	 << endl;
+			  	 numero = it[n].price*it[n].quantity;
+		}
+		cout << setw(60) << "Total: " << numero;
+		numero=0;
 	}	
 }
-
 
