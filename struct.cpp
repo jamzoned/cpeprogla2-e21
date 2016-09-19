@@ -35,14 +35,14 @@ void newLine(){
 
 int main(){
 	Item it[3];
-	Customer cust[1];
+	Customer cust[3];
 	double numero;
 	
 	cout.setf(ios::fixed);
 	cout.setf(ios::showpoint);
 	cout.precision(2);
 	
-	for(int m=0; m<1; m++){
+	for(int m=0; m<3; m++){
 		
 		cout<<"Enter Customer's Information " << m+1 << endl;
 		cout<<"Enter First Name: ";
@@ -81,12 +81,12 @@ int main(){
 	cout << setw(10) << "#"
 	  	 << setw(15) << "Customer Name"
 		 << setw(15) << "Order Date"
-		 << setw(15) << "Item"
-		 << setw(15) << "Price"
-		 << setw(25) << "Quantity" 
+		 << setw(16) << "Item"
+		 << setw(17) << "Price"
+		 << setw(22) << "Quantity" 
 		 << endl;
 		 
-	for (int m=0; m<1; m++){
+	for (int m=0; m<3; m++){
 		cout << setw(10) << m+1
 			 << setw(10) << cust[m].name.lastName << cust[m].name.firstName 
 			 << setw(10) << cust[m].ord.day << "/" <<cust[m].ord.month << "/" << cust[m].ord.year
@@ -98,8 +98,12 @@ int main(){
 			  	 << endl;
 			  	 numero = it[n].price*it[n].quantity;
 		}
-		cout << setw(60) << "Total: " << numero;
+		cout << setw(85) << "Total: " << numero;
 		numero=0;
-	}	
+		cout<<endl;
+		
+	}
+	
+	system("pause");	
 }
 
